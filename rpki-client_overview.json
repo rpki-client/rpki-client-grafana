@@ -131,7 +131,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^Value$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -146,7 +146,7 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "rpki_client_job_completion_time{instance=\"$node:$port\"} * 1000",
-          "format": "table",
+          "format": "time_series",
           "instant": true,
           "interval": "",
           "legendFormat": "__auto",

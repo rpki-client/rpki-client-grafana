@@ -19,3 +19,12 @@ ln -s /var/db/rpki-client/metrics rpki-client.prom
 ```
 
 rpki-client replaces the file after a successful run with an atomic rename(2). So `node_exporter` will never read a partial file.
+
+## example overview panel
+
+![example overview panel](/assets/rpki_overview.png)
+
+## example CA panel
+
+![example CA panel](/assets/rpki_ca_view.png)
+

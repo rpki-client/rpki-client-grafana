@@ -560,7 +560,7 @@
           "refId": "A"
         }
       ],
-      "title": "VPRs per TAL",
+      "title": "VRPs per TAL",
       "type": "timeseries"
     },
     {

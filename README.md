@@ -1,11 +1,11 @@
 # Grafana dashboards for rpki-client
 
-Dashboard templates for rpki-client using the new OpenMetrics output support by rpki-client -m.
-The metrics file needs to be either added as a textfile collector in node_exporter or it is
+Dashboard templates for rpki-client using the new OpenMetrics output support by `rpki-client -m`.
+The metrics file needs to be either added as a textfile collector in `node_exporter` or it is
 served by a webserver so prometheus can ingest it.
 
-The overview dashboard shows some global stats and per TAL information.
-The CA repository dashboard show per CA information.
+The overview dashboard shows some global stats and per _Trust Anchor Locator (TAL)_ information.
+The _CA_ repository dashboard show per _Certification Authority (CA)_ information.
 
 ## node_exporter setup
 

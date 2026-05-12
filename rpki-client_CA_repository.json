@@ -1,47 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "11.2.2"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -68,11 +25,10 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -80,13 +36,14 @@
         "y": 0
       },
       "id": 2,
+      "panels": [],
       "title": "Overview",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Job completion time",
       "fieldConfig": {
@@ -101,7 +58,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -133,16 +90,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_job_completion_time{instance=\"$node:$port\"} * 1000",
+          "expr": "rpki_client_job_completion_time{instance=\"$instance\"} * 1000",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -157,7 +114,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Unique Validated ROA payloads",
       "fieldConfig": {
@@ -171,7 +128,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -203,16 +160,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vrp\", state=\"unique\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vrp\", state=\"unique\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -226,7 +183,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Unique Validated ASPA payloads",
       "fieldConfig": {
@@ -240,7 +197,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -272,16 +229,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vap\", state=\"unique\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vap\", state=\"unique\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -295,7 +252,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "BGPsec router certificates",
       "fieldConfig": {
@@ -309,7 +266,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -341,16 +298,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"router_key\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"router_key\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -363,8 +320,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "New or Deleted files in a CARepository",
       "fieldConfig": {
@@ -396,6 +354,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -411,7 +370,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -437,18 +396,20 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$node:$port\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"files\"})",
+          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"files\"})",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -460,8 +421,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Time to synchronize repository",
       "fieldConfig": {
@@ -494,6 +456,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -509,7 +472,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -536,18 +499,20 @@
           "showLegend": false
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_repository_duration{instance=\"$node:$port\", carepo=~\"$carepo\", notify=~\"$notify\"}",
+          "expr": "rpki_client_repository_duration{instance=\"$instance\", carepo=~\"$carepo\", notify=~\"$notify\"}",
           "interval": "",
           "legendFormat": "{{carepo}}",
           "range": true,
@@ -559,8 +524,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Last repository sync time",
       "fieldConfig": {
@@ -577,7 +543,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               },
               {
                 "color": "#EAB839",
@@ -616,12 +582,12 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -637,7 +603,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Total Validated Certificates",
       "fieldConfig": {
@@ -651,7 +617,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -683,16 +649,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"cert\", state=\"valid\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"cert\", state=\"valid\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -706,7 +672,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Total Validated Manifests",
       "fieldConfig": {
@@ -720,7 +686,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -752,16 +718,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"manifest\", state=\"valid\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"manifest\", state=\"valid\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -775,7 +741,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Total Validated ROA, ASPA, GBR and other payloads",
       "fieldConfig": {
@@ -789,7 +755,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -821,16 +787,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type!~\"cert|crl|manifest\", state=\"valid\"})",
+          "expr": "sum (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type!~\"cert|crl|manifest\", state=\"valid\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -857,7 +823,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Validated ROA payloads",
       "fieldConfig": {
@@ -890,6 +856,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -905,7 +872,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -952,18 +919,20 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vrp\"})",
+          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vrp\"})",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -975,7 +944,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Validated ASPA payloads",
       "fieldConfig": {
@@ -1008,6 +977,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1023,7 +993,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1070,18 +1040,20 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vap\"})",
+          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vap\"})",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -1093,7 +1065,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Validated Router Keys",
       "fieldConfig": {
@@ -1126,6 +1098,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1141,7 +1114,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1188,18 +1161,20 @@
           "showLegend": false
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by(state) (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"router_key\"})",
+          "expr": "sum by(state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"router_key\"})",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -1224,7 +1199,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Valid Objects",
       "fieldConfig": {
@@ -1256,6 +1231,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1271,7 +1247,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1300,18 +1276,20 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (type) (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", state=\"valid\"})",
+          "expr": "sum by (type) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", state=\"valid\"})",
           "legendFormat": "{{type}}",
           "range": true,
           "refId": "A"
@@ -1323,7 +1301,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "ee2u5rxwn2lfkf"
       },
       "description": "Excluded Objects",
       "fieldConfig": {
@@ -1355,6 +1333,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1370,7 +1349,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1399,7 +1378,7 @@
                 "id": "custom.hideFrom",
                 "value": {
                   "legend": false,
-                  "tooltip": false,
+                  "tooltip": true,
                   "viz": true
                 }
               }
@@ -1424,18 +1403,20 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "desc"
         }
       },
+      "pluginVersion": "12.4.2",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (type, state) (rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type!~\"v[ar]p.*\", state!=\"valid\"})",
+          "expr": "sum by (type, state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type!~\"v[ar]p.*\", state!=\"valid\"})",
           "format": "time_series",
           "legendFormat": "{{type}} {{state}}",
           "range": true,
@@ -1446,23 +1427,25 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
-  "schemaVersion": 39,
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 42,
   "tags": [],
   "templating": {
     "list": [
       {
-        "current": {},
+        "current": {
+          "text": "blr",
+          "value": "blr"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "ee2u5rxwn2lfkf"
         },
         "definition": "label_values(rpki_client_info,nodename)",
         "description": "rpki-client instance",
-        "hide": 0,
         "includeAll": false,
         "label": "Host:",
-        "multi": false,
         "name": "name",
         "options": [],
         "query": {
@@ -1471,130 +1454,110 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
+        "regexApplyTo": "value",
         "type": "query"
       },
       {
-        "current": {},
+        "current": {
+          "text": "blr1.rpkiviews.org",
+          "value": "blr1.rpkiviews.org"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "ee2u5rxwn2lfkf"
         },
         "definition": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
         "hide": 2,
         "includeAll": false,
-        "label": "",
-        "multi": false,
-        "name": "node",
+        "name": "instance",
         "options": [],
         "query": {
           "query": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
-        "regex": "/([^:]+):.*/",
-        "skipUrlSync": false,
-        "sort": 0,
+        "regex": "",
+        "regexApplyTo": "value",
         "type": "query"
       },
       {
-        "current": {},
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "ee2u5rxwn2lfkf"
         },
-        "definition": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "port",
-        "options": [],
-        "query": {
-          "query": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
-          "refId": "StandardVariableQuery"
-        },
-        "refresh": 1,
-        "regex": "/[^:]+:(.*)/",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
-        },
-        "definition": "label_values(rpki_client_ta_objects{instance=\"$node:$port\"}, name)",
+        "definition": "label_values(rpki_client_ta_objects{instance=\"$instance\"},name)",
         "description": "Trust anchor",
-        "hide": 0,
         "includeAll": true,
         "label": "TAL",
-        "multi": false,
         "name": "tal",
         "options": [],
         "query": {
-          "query": "label_values(rpki_client_ta_objects{instance=\"$node:$port\"}, name)",
-          "refId": "StandardVariableQuery"
+          "qryType": 1,
+          "query": "label_values(rpki_client_ta_objects{instance=\"$instance\"},name)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 2,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
+        "regexApplyTo": "value",
         "type": "query"
       },
       {
-        "current": {},
+        "current": {
+          "text": "https://rpki.afrinic.net/repository/AfriNIC.cer",
+          "value": "https://rpki.afrinic.net/repository/AfriNIC.cer"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "ee2u5rxwn2lfkf"
         },
-        "definition": "label_values(rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\"}, carepo)",
+        "definition": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\"},carepo)",
         "description": "Repository URI",
-        "hide": 0,
         "includeAll": false,
         "label": "CA Repo",
-        "multi": false,
         "name": "carepo",
         "options": [],
         "query": {
-          "query": "label_values(rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\"}, carepo)",
-          "refId": "StandardVariableQuery"
+          "qryType": 1,
+          "query": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\"},carepo)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
+        "regexApplyTo": "value",
         "type": "query"
       },
       {
-        "current": {},
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "ee2u5rxwn2lfkf"
         },
-        "definition": "label_values(rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\"}, notify)",
-        "hide": 0,
+        "definition": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\"},notify)",
         "includeAll": true,
         "label": "Notify URI",
-        "multi": false,
         "name": "notify",
         "options": [],
         "query": {
-          "query": "label_values(rpki_client_repository_objects{instance=\"$node:$port\", name=~\"$tal\", carepo=~\"$carepo\"}, notify)",
-          "refId": "StandardVariableQuery"
+          "qryType": 1,
+          "query": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\"},notify)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
+        "regexApplyTo": "value",
         "type": "query"
       }
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -1606,9 +1569,9 @@
       "1d"
     ]
   },
-  "timezone": "",
+  "timezone": "browser",
   "title": "rpki-client CA repository",
   "uid": "jCUqvfKVz",
-  "version": 5,
+  "version": 8,
   "weekStart": ""
 }

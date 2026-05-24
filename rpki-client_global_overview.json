@@ -1,4 +1,35 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "12.4.2"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -22,9 +53,8 @@
   "panels": [
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -107,7 +137,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance) (rpki_client_objects{type=~\"vrp\", state=\"unique\"})",
@@ -122,9 +152,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -208,7 +237,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance) (rpki_client_duration{type=\"elapsed\"})",
@@ -223,9 +252,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -308,7 +336,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance) (rpki_client_repository_objects{type=\"files\", state=\"extra\"})",
@@ -323,9 +351,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -408,7 +435,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance) (rpki_client_repository_objects{type=\"files\", state=\"new\"})",

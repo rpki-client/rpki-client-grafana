@@ -1,4 +1,47 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "12.4.2"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -43,7 +86,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Job completion time",
       "fieldConfig": {
@@ -95,7 +138,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -114,7 +157,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Unique Validated ROA payloads",
       "fieldConfig": {
@@ -165,7 +208,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -183,7 +226,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Unique Validated ASPA payloads",
       "fieldConfig": {
@@ -234,7 +277,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -252,7 +295,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "BGPsec router certificates",
       "fieldConfig": {
@@ -303,7 +346,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -320,9 +363,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "New or Deleted files in a CARepository",
       "fieldConfig": {
@@ -406,7 +448,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"files\"})",
@@ -421,9 +463,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Time to synchronize repository",
       "fieldConfig": {
@@ -509,7 +550,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "rpki_client_repository_duration{instance=\"$instance\", carepo=~\"$carepo\", notify=~\"$notify\"}",
@@ -524,9 +565,8 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Last repository sync time",
       "fieldConfig": {
@@ -587,7 +627,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -603,7 +643,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total Validated Certificates",
       "fieldConfig": {
@@ -654,7 +694,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -672,7 +712,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total Validated Manifests",
       "fieldConfig": {
@@ -723,7 +763,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -741,7 +781,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total Validated ROA, ASPA, GBR and other payloads",
       "fieldConfig": {
@@ -792,7 +832,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -823,7 +863,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Validated ROA payloads",
       "fieldConfig": {
@@ -929,7 +969,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vrp\"})",
@@ -944,7 +984,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Validated ASPA payloads",
       "fieldConfig": {
@@ -1050,7 +1090,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"vap\"})",
@@ -1065,7 +1105,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Validated Router Keys",
       "fieldConfig": {
@@ -1171,7 +1211,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by(state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type=\"router_key\"})",
@@ -1199,7 +1239,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Valid Objects",
       "fieldConfig": {
@@ -1286,7 +1326,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (type) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", state=\"valid\"})",
@@ -1301,7 +1341,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "ee2u5rxwn2lfkf"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Excluded Objects",
       "fieldConfig": {
@@ -1413,7 +1453,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee2u5rxwn2lfkf"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (type, state) (rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\", notify=~\"$notify\", type!~\"v[ar]p.*\", state!=\"valid\"})",
@@ -1434,45 +1474,19 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "text": "blr",
-          "value": "blr"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
+          "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "label_values(rpki_client_info,nodename)",
+        "definition": "label_values(rpki_client_repository,instance)",
         "description": "rpki-client instance",
         "includeAll": false,
-        "label": "Host:",
-        "name": "name",
-        "options": [],
-        "query": {
-          "query": "label_values(rpki_client_info,nodename)",
-          "refId": "StandardVariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "regexApplyTo": "value",
-        "type": "query"
-      },
-      {
-        "current": {
-          "text": "blr1.rpkiviews.org",
-          "value": "blr1.rpkiviews.org"
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
-        },
-        "definition": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
-        "hide": 2,
-        "includeAll": false,
+        "label": "instance:",
         "name": "instance",
         "options": [],
         "query": {
-          "query": "label_values(rpki_client_info{nodename=\"$name\"}, instance)",
+          "query": "label_values(rpki_client_repository,instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -1481,13 +1495,10 @@
         "type": "query"
       },
       {
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(rpki_client_ta_objects{instance=\"$instance\"},name)",
         "description": "Trust anchor",
@@ -1506,13 +1517,10 @@
         "type": "query"
       },
       {
-        "current": {
-          "text": "https://rpki.afrinic.net/repository/AfriNIC.cer",
-          "value": "https://rpki.afrinic.net/repository/AfriNIC.cer"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\"},carepo)",
         "description": "Repository URI",
@@ -1531,13 +1539,10 @@
         "type": "query"
       },
       {
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\", carepo=~\"$carepo\"},notify)",
         "includeAll": true,
@@ -1557,7 +1562,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1572,6 +1577,6 @@
   "timezone": "browser",
   "title": "rpki-client CA repository",
   "uid": "jCUqvfKVz",
-  "version": 8,
+  "version": 10,
   "weekStart": ""
 }

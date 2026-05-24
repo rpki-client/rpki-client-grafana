@@ -1517,6 +1517,7 @@
         "type": "query"
       },
       {
+        "allValue": ".+",
         "current": {},
         "datasource": {
           "type": "prometheus",
@@ -1524,7 +1525,7 @@
         },
         "definition": "label_values(rpki_client_repository_objects{instance=\"$instance\", name=~\"$tal\"},carepo)",
         "description": "Repository URI",
-        "includeAll": false,
+        "includeAll": true,
         "label": "CA Repo",
         "name": "carepo",
         "options": [],
@@ -1562,7 +1563,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -1577,6 +1578,6 @@
   "timezone": "browser",
   "title": "rpki-client CA repository",
   "uid": "jCUqvfKVz",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }

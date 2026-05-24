@@ -99,7 +99,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_job_completion_time{instance=\"$instance\"} * 1000",
+          "expr": "rpki_client_job_completion_time{instance=~\"$instance\"} * 1000",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -169,7 +169,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_objects{instance=\"$instance\", type=~\"vrp\", state=\"unique\"}",
+          "expr": "rpki_client_objects{instance=~\"$instance\", type=~\"vrp\", state=\"unique\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -238,7 +238,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_objects{instance=\"$instance\", type=~\"vap\", state=\"unique\"}",
+          "expr": "rpki_client_objects{instance=~\"$instance\", type=~\"vap\", state=\"unique\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -307,7 +307,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_objects{instance=\"$instance\", type=\"router_key\"}",
+          "expr": "rpki_client_objects{instance=~\"$instance\", type=\"router_key\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -430,7 +430,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_duration{instance=\"$instance\"}",
+          "expr": "rpki_client_duration{instance=~\"$instance\"}",
           "legendFormat": "{{type}}",
           "range": true,
           "refId": "A"
@@ -505,7 +505,7 @@
             "type": "prometheus",
             "uid": "ee2u5rxwn2lfkf"
           },
-          "expr": "rpki_client_duration{instance=\"$instance\", type=\"elapsed\"}",
+          "expr": "rpki_client_duration{instance=~\"$instance\", type=\"elapsed\"}",
           "refId": "A"
         }
       ],
@@ -570,7 +570,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_objects{instance=\"$instance\", type=\"cert\", state=\"valid\"}",
+          "expr": "rpki_client_objects{instance=~\"$instance\", type=\"cert\", state=\"valid\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -639,7 +639,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_objects{instance=\"$instance\", type=~\"manifest\", state=\"valid\"}",
+          "expr": "rpki_client_objects{instance=~\"$instance\", type=~\"manifest\", state=\"valid\"}",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -655,7 +655,7 @@
         "type": "prometheus",
         "uid": "ee2u5rxwn2lfkf"
       },
-      "description": "Total Validated ROA, ASPA, GBR and other objects.\nExcluding certificates, manifests and CRLs.",
+      "description": "Total Validated ROA, ASPA, and other objects.\nExcluding certificates, manifests and CRLs.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -708,7 +708,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum (rpki_client_objects{instance=\"$instance\", type!~\"cert|crl|manifest\", state=\"valid\"})",
+          "expr": "sum (rpki_client_objects{instance=~\"$instance\", type!~\"cert|crl|manifest\", state=\"valid\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "{{type}} {{state}}",
@@ -782,7 +782,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "rpki_client_info{instance=\"$instance\"}",
+          "expr": "rpki_client_info{instance=~\"$instance\"}",
           "format": "time_series",
           "instant": true,
           "legendFormat": "{{release}}",
@@ -884,7 +884,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository_objects{instance=\"$instance\", type=\"files\"})",
+          "expr": "sum by (state) (rpki_client_repository_objects{instance=~\"$instance\", type=\"files\"})",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -983,7 +983,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_ta_objects{instance=\"$instance\", type=\"vrp\", state=\"total\"}",
+          "expr": "rpki_client_ta_objects{instance=~\"$instance\", type=\"vrp\", state=\"total\"}",
           "legendFormat": "{{name}}",
           "range": true,
           "refId": "A"
@@ -1103,7 +1103,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository{instance=\"$instance\", state=~\"synced\"})",
+          "expr": "sum by (state) (rpki_client_repository{instance=~\"$instance\", state=~\"synced\"})",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -1114,7 +1114,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_repository{instance=\"$instance\", state=~\"failed\"})",
+          "expr": "sum by (state) (rpki_client_repository{instance=~\"$instance\", state=~\"failed\"})",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "B"
@@ -1230,7 +1230,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_ta_objects{instance=\"$instance\", name=~\"$tal\", state=\"valid\"}",
+          "expr": "rpki_client_ta_objects{instance=~\"$instance\", name=~\"$tal\", state=\"valid\"}",
           "legendFormat": "{{type}}",
           "range": true,
           "refId": "A"
@@ -1332,7 +1332,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "sum by (state) (rpki_client_ta_objects{instance=\"$instance\", name=~\"$tal\", type!~\"v[ar]p.*\", state!=\"valid\"})",
+          "expr": "sum by (state) (rpki_client_ta_objects{instance=~\"$instance\", name=~\"$tal\", type!~\"v[ar]p.*\", state!=\"valid\"})",
           "format": "time_series",
           "legendFormat": "{{state}}",
           "range": true,
@@ -1454,7 +1454,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_ta_objects{instance=\"$instance\", type=\"vrp\", name=~\"$tal\"}",
+          "expr": "rpki_client_ta_objects{instance=~\"$instance\", type=\"vrp\", name=~\"$tal\"}",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -1575,7 +1575,7 @@
             "uid": "ee2u5rxwn2lfkf"
           },
           "editorMode": "code",
-          "expr": "rpki_client_ta_objects{instance=\"$instance\", type=\"vap\", name=~\"$tal\"}",
+          "expr": "rpki_client_ta_objects{instance=~\"$instance\", type=\"vap\", name=~\"$tal\"}",
           "legendFormat": "{{state}}",
           "range": true,
           "refId": "A"
@@ -1592,46 +1592,22 @@
   "templating": {
     "list": [
       {
+        "allValue": ".+",
         "current": {
-          "text": "ber-vrp-gen1",
-          "value": "ber-vrp-gen1"
+          "text": "miso.sobornost.net",
+          "value": "miso.sobornost.net"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "ee2u5rxwn2lfkf"
         },
-        "definition": "label_values(rpki_client_info,nodename)",
-        "description": "rpki-client instance",
-        "label": "Host:",
-        "name": "name",
-        "options": [],
-        "query": {
-          "qryType": 1,
-          "query": "label_values(rpki_client_info,nodename)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "regexApplyTo": "value",
-        "type": "query"
-      },
-      {
-        "current": {
-          "text": "ber-vrp-gen1.rpki-client.org",
-          "value": "ber-vrp-gen1.rpki-client.org"
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "ee2u5rxwn2lfkf"
-        },
-        "definition": "label_values(rpki_client_info{nodename=\"$name\"},instance)",
-        "hide": 2,
-        "includeAll": false,
+        "definition": "label_values(rpki_client_repository,instance)",
+        "includeAll": true,
         "name": "instance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(rpki_client_info{nodename=\"$name\"},instance)",
+          "query": "label_values(rpki_client_repository,instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -1682,6 +1658,6 @@
   "timezone": "browser",
   "title": "rpki-client overview",
   "uid": "9iOBicF4z",
-  "version": 9,
+  "version": 14,
   "weekStart": ""
 }

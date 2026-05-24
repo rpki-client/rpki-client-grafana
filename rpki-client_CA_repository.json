@@ -1399,32 +1399,7 @@
           },
           "unit": "none"
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "rpki_client_repository_objects{carepo=\"rsync://chloe.sobornost.net/rpki\", instance=\"10.83.0.5:9100\", job=\"node_exporter\", name=\"ripe\", notify=\"https://chloe.sobornost.net/rpki/news.xml\", state=\"unique\", type=\"vrp\"}"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": true,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 10,
